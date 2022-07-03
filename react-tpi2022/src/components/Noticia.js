@@ -1,15 +1,15 @@
-function Noticia() {
+function Noticia(props) {
   const noticia = {
-    titulo: 'Titulo de la Noticia',
-    descripcion: 'Descripcion de la noticia',
+    titulo: props.titulo,
+    descripcion: props.descripcion,
   };
 
   const { titulo, descripcion } = noticia;
 
   return (
     <>
-      <h1>{titulo}</h1>
-      <p>{descripcion}</p>
+      <h2>{titulo || 'Curso React 2022'}</h2>
+      <p>{descripcion || 'Informatorio FrontEnd Development'}</p>
     </>
   );
 }

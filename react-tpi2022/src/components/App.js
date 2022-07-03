@@ -7,8 +7,15 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Noticia />
-      <ClassComponent />
+      <Noticia
+        titulo="Primer noticia"
+        descripcion="Detalle de la noticia nro 1"
+      />
+      <Noticia
+        titulo="Segunda noticia"
+        descripcion="Detalle de la noticia nro 2"
+      />
+      <ClassComponent titulo="Este es el class component" />
     </div>
   );
 }
