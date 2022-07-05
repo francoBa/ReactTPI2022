@@ -1,0 +1,113 @@
+import React, { Component } from 'react';
+import {
+  Button,
+  Cascader,
+  DatePicker,
+  Form,
+  Input,
+  InputNumber,
+  Radio,
+  Select,
+  Switch,
+  TreeSelect,
+} from 'antd';
+
+class CreateForm extends Component {
+  constructor(props) {
+    super(props);
+    this.onFormLayoutChange = this.onFormLayoutChange.bind(this);
+  }
+
+  state = {
+    valor: 0,
+    componentSize: 'default',
+  };
+
+  onFormLayoutChange({ size }) {
+    this.setState({ componentSize: size });
+  }
+
+  render() {
+    return (
+      <Form
+        labelCol={{
+          span: 4,
+        }}
+        wrapperCol={{
+          span: 14,
+        }}
+        layout="horizontal"
+        initialValues={{
+          size: this.state.componentSize,
+        }}
+        onValuesChange={this.onFormLayoutChange}
+        size={this.state.componentSize}
+      >
+        <Form.Item label="Form Size" name="size">
+          <Radio.Group>
+            <Radio.Button value="small">Small</Radio.Button>
+            <Radio.Button value="default">Default</Radio.Button>
+            <Radio.Button value="large">Large</Radio.Button>
+          </Radio.Group>
+        </Form.Item>
+        <Form.Item label="Ingresar Título">
+          <Input
+            value={this.props.formValues.titulo}
+            onChange={this.props.handleChange}
+          />
+        </Form.Item>
+        <Form.Item label="Select">
+          <Select>
+            <Select.Option value="demo">Demo</Select.Option>
+          </Select>
+        </Form.Item>
+        <Form.Item label="TreeSelect">
+          <TreeSelect
+            treeData={[
+              {
+                title: 'Light',
+                value: 'light',
+                children: [
+                  {
+                    title: 'Bamboo',
+                    value: 'bamboo',
+                  },
+                ],
+              },
+            ]}
+          />
+        </Form.Item>
+        <Form.Item label="Cascader">
+          <Cascader
+            options={[
+              {
+                value: 'zhejiang',
+                label: 'Zhejiang',
+                children: [
+                  {
+                    value: 'hangzhou',
+                    label: 'Hangzhou',
+                  },
+                ],
+              },
+            ]}
+          />
+        </Form.Item>
+        <Form.Item label="DatePicker">
+          <DatePicker />
+        </Form.Item>
+        <Form.Item label="InputNumber">
+          <InputNumber />
+        </Form.Item>
+        <Form.Item label="Switch" valuePropName="checked">
+          <Switch />
+        </Form.Item>
+        <Form.Item label="Button">
+          <Button>Button</Button>
+        </Form.Item>
+      </Form>
+    );
+  }
+}
+
+export default CreateForm;

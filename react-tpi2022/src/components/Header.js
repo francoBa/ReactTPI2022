@@ -1,23 +1,28 @@
-import logo from '../logo.svg';
+import { Layout, Menu } from 'antd';
+const { Header: Head } = Layout;
 
 function Header() {
+  const items = [
+    { label: 'item 1', key: 'item-1' }, // remember to pass the key prop
+    { label: 'item 2', key: 'item-2' }, // which is required
+    {
+      label: 'sub menu',
+      key: 'submenu',
+      children: [{ label: 'item 3', key: 'submenu-item-1' }],
+    },
+  ];
+
   return (
-    <>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </>
+    <Head
+      style={{
+        position: 'fixed',
+        zIndex: 2,
+        width: '100%',
+      }}
+    >
+      <Menu theme="dark" mode="horizontal" items={items} />
+      <h1 className="float-right-title">React & Ant Design</h1>
+    </Head>
   );
 }
 

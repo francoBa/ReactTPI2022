@@ -44,3 +44,25 @@
   gap: 1rem;
   font-size: 2rem;
 }
+
+.site-layout-content {
+  min-height: 82vh;
+  padding: 24px;
+  background: #fff;
+}
+
+.site-page-header {
+  border: 1px solid rgb(235, 237, 240);
+}
+
+.float-right-title {
+  position: absolute;
+  left: 40%;
+  top: 0;
+  z-index: 2;
+  color: #fff;
+}
+
+.ant-card-meta-detail {
+  margin-bottom: 0.3rem;
+}
