@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import { Layout, Menu } from 'antd';
+import { NavLink } from 'react-router-dom';
 const { Header: Head } = Layout;
 
-function Header() {
+function Header(props) {
   const items = [
-    { label: 'item 1', key: 'item-1' }, // remember to pass the key prop
-    { label: 'item 2', key: 'item-2' }, // which is required
+    { label: <NavLink to="/">Home</NavLink>, key: 'item-1' },
+    { label: <NavLink to="/about">About</NavLink>, key: 'item-2' },
     {
       label: 'sub menu',
       key: 'submenu',
@@ -12,16 +14,31 @@ function Header() {
     },
   ];
 
+  const titulo = 'React Info 2022';
+  const [current, setCurrent] = useState('item-1');
+
+  const onClickItem = (e) => {
+    console.log('click ', e.key);
+    setCurrent(e.key);
+  };
+
   return (
     <Head
       style={{
         position: 'fixed',
         zIndex: 2,
         width: '100%',
+        marginBottom: 64,
       }}
     >
-      <Menu theme="dark" mode="horizontal" items={items} />
-      <h1 className="float-right-title">React & Ant Design</h1>
+      <Menu
+        theme="dark"
+        mode="horizontal"
+        items={items}
+        selectedKeys={[current]}
+        onClick={onClickItem}
+      />
+      <h1 className="float-right-title">{titulo}</h1>
     </Head>
   );
 }

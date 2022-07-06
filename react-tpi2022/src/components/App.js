@@ -1,26 +1,19 @@
-// import '../App.css';
+import { Routes, Route } from 'react-router-dom';
+import About from '../pages/About';
 import Home from '../pages/Home';
-// import ClassComponent from './ClassComponent';
-// import Counter from './Counter';
-// import Header from './Header';
-// import Noticia from './Noticia';
+import Page404 from '../pages/Page404';
+import Layout from './Layout';
 
 function App() {
   return (
-    // <div className="App">
-    //   <Header />
-    //   <Noticia
-    //     titulo="Primer noticia"
-    //     descripcion="Detalle de la noticia nro 1"
-    //   />
-    //   <Noticia
-    //     titulo="Segunda noticia"
-    //     descripcion="Detalle de la noticia nro 2"
-    //   />
-    //   <ClassComponent titulo="Este es el class component" />
-    //   <Counter />
-    // </div>
-    <Home />
+    <Layout>
+      <Routes>
+        <Route path="about" exact element={<About />} />
+        <Route path="buscador" exact element={<Home />} />
+        <Route index path="" exact element={<Home />} />
+        <Route path="*" exact element={<Page404 />} />
+      </Routes>
+    </Layout>
   );
 }
 

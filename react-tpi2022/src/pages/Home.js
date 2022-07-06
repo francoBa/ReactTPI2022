@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Layout, Input, Divider } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
-import Header from '../components/Header';
 import CreateForm from '../components/CreateForm';
 import CardComponent from '../components/CardComponent';
+import Lista from '../components/Lista';
 const { Content, Footer } = Layout;
 const { Search } = Input;
 
@@ -39,11 +39,9 @@ class Home extends Component {
   render() {
     return (
       <Layout>
-        <Header />
         <Content
           style={{
             padding: '0 50px',
-            marginTop: 64,
             className: 'site-layout-content',
           }}
         >
@@ -65,6 +63,8 @@ class Home extends Component {
               formValues={this.state.form}
               handleChange={this.handleChange}
             />
+            <Divider />
+            <Lista />
           </div>
         </Content>
         <Footer
