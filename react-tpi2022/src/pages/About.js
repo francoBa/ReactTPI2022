@@ -41,7 +41,7 @@ function About() {
             onSearch={onSearch}
             style={{
               width: 304,
-              marginBottom: '2rem',
+              margin: '4rem auto 2rem',
             }}
           />
           <CardComponent titulo={form.titulo} />

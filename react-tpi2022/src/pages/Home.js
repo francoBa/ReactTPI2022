@@ -4,6 +4,7 @@ import { AudioOutlined } from '@ant-design/icons';
 import CreateForm from '../components/CreateForm';
 import CardComponent from '../components/CardComponent';
 import Lista from '../components/Lista';
+import CicloDeVida from '../components/CicloDeVida';
 const { Content, Footer } = Layout;
 const { Search } = Input;
 
@@ -54,7 +55,7 @@ class Home extends Component {
               onSearch={this.onSearch}
               style={{
                 width: 304,
-                marginBottom: '2rem',
+                margin: '4rem auto 2rem',
               }}
             />
             <CardComponent titulo={this.state.form.titulo} />
@@ -65,6 +66,7 @@ class Home extends Component {
             />
             <Divider />
             <Lista />
+            <CicloDeVida />
           </div>
         </Content>
         <Footer

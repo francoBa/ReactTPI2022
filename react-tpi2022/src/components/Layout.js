@@ -3,7 +3,7 @@ import Header from './Header';
 function Layout(props) {
   return (
     <>
-      <Header />
+      <Header titulo="Título desde Layout" />
       {props.children}
     </>
   );
