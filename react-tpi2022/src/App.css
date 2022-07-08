@@ -55,11 +55,11 @@
   border: 1px solid rgb(235, 237, 240);
 }
 
-.float-right-title {
-  position: absolute;
+.main-title {
+  /* position: absolute;
   left: 40%;
   top: 0;
-  z-index: 2;
+  z-index: 2; */
   color: #fff;
 }
 
@@ -69,4 +69,8 @@
 
 .ant-result-image {
   margin-top: 64px;
+}
+
+.ant-col {
+  margin-bottom: 1rem;
 }

@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { Layout, Input, Divider } from 'antd';
+import { Layout } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
-import CreateForm from '../components/CreateForm';
-import CardComponent from '../components/CardComponent';
-import Lista from '../components/Lista';
-import CicloDeVida from '../components/CicloDeVida';
+import ListaNoticias from '../components/ListaNoticias';
+import Search from '../components/Search';
 const { Content, Footer } = Layout;
-const { Search } = Input;
 
 class Home extends Component {
   constructor(props) {
@@ -16,7 +13,8 @@ class Home extends Component {
   }
 
   state = {
-    valor: 0,
+    valor: 'bitcoin',
+    buscarBtn: true,
     form: {
       titulo: 'Franco',
     },
@@ -26,7 +24,9 @@ class Home extends Component {
     this.setState({ form: { titulo: e.target.value } });
   };
 
-  onSearch = (value) => console.log(value);
+  onSearch = (value) => {
+    this.setState({ valor: value });
+  };
 
   suffix = (
     <AudioOutlined
@@ -47,26 +47,8 @@ class Home extends Component {
           }}
         >
           <div className="site-layout-content">
-            <Search
-              placeholder="input search text"
-              enterButton="Search"
-              size="default"
-              suffix={this.suffix}
-              onSearch={this.onSearch}
-              style={{
-                width: 304,
-                margin: '4rem auto 2rem',
-              }}
-            />
-            <CardComponent titulo={this.state.form.titulo} />
-            <Divider />
-            <CreateForm
-              formValues={this.state.form}
-              handleChange={this.handleChange}
-            />
-            <Divider />
-            <Lista />
-            <CicloDeVida />
+            <Search changeValue={this.onSearch} />
+            <ListaNoticias valor={this.state.valor} />
           </div>
         </Content>
         <Footer
