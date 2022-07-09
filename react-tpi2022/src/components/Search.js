@@ -16,7 +16,11 @@ function Search(props) {
   };
 
   const checkKeyPressed = (e) => {
-    if (e.key === 'Enter' && !btnDisabled) props.changeValue(value);
+    if (e.key === 'Enter' && !btnDisabled) {
+      props.changeValue(value);
+      setValue('');
+      setBtnDisabled(true);
+    }
   };
 
   return (

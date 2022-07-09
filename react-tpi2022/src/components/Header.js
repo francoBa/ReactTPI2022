@@ -10,7 +10,12 @@ function Header(props) {
     {
       label: 'Contact Us',
       key: 'Contact-Us',
-      children: [{ label: 'Send Email', key: 'Form' }],
+      children: [
+        {
+          label: <NavLink to="/contacto">Form Contacto</NavLink>,
+          key: 'Contacto',
+        },
+      ],
     },
   ];
 
@@ -41,11 +46,13 @@ function Header(props) {
         marginBottom: 64,
       }}
     >
+      <div className="logo" />
       <Row>
         <Col xs={16} md={12} lg={12}>
           <Menu
             theme="dark"
             mode="horizontal"
+            // inlineCollapsed={true}
             items={items}
             selectedKeys={[current]}
             onClick={onClickItem}
