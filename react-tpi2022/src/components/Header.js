@@ -23,8 +23,8 @@ function Header(props) {
   const [current, setCurrent] = useState('Home');
 
   const onClickItem = (e) => {
-    console.log('click ', e.key);
-    setCurrent(e.key);
+    // console.log('click ', e.key);
+    e.target ? setCurrent('Home') : setCurrent(e.key);
   };
 
   useEffect(() => {
@@ -46,7 +46,8 @@ function Header(props) {
         marginBottom: 64,
       }}
     >
-      <div className="logo" />
+      {/* <a className="logo"></a> */}
+      <NavLink className="logo" to="/" onClick={onClickItem}></NavLink>
       <Row>
         <Col xs={16} md={12} lg={12}>
           <Menu
