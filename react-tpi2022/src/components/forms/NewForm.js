@@ -1,8 +1,8 @@
 import { MailOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input, Row, Col } from 'antd';
+import { useEffect, useRef } from 'react';
 import Swal from 'sweetalert2';
 // import { useNavigate } from 'react-router-dom';
-// import { useState } from 'react';
 
 //useRef podemos usarlo para:
 // 1- acceder a un elemento único del DOM
@@ -12,6 +12,11 @@ function NewForm() {
   // const [nombre, setNombre] = useState('');
   // const [formVisible, setFormVisible] = useState('');
   // const navigate = useNavigate();
+  const inputName = useRef();
+
+  useEffect(() => {
+    inputName.current.focus();
+  }, []);
 
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
@@ -24,7 +29,9 @@ function NewForm() {
     });
     // navigate('/');
     // setFormVisible('none');
-    window.location.href = '/';
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 1500);
   };
 
   return (
@@ -51,6 +58,7 @@ function NewForm() {
             <Input
               prefix={<UserOutlined className="site-form-item-icon" />}
               placeholder="Su nombre"
+              ref={inputName}
             />
           </Form.Item>
           <Form.Item

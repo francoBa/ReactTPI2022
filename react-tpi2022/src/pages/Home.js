@@ -3,7 +3,7 @@ import { Layout } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
 import ListaNoticias from '../components/ListaNoticias';
 import Search from '../components/Search';
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 class Home extends Component {
   constructor(props) {
@@ -51,14 +51,6 @@ class Home extends Component {
             <ListaNoticias valor={this.state.valor} />
           </div>
         </Content>
-        <Footer
-          style={{
-            textAlign: 'center',
-          }}
-        >
-          <a href="./"> Franco Barreto ©2022 </a>|<a href="./"> Privacy </a>|
-          <a href="./"> About </a> | <a href="./"> Disclaimer </a>
-        </Footer>
       </Layout>
     );
   }

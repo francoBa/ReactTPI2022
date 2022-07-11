@@ -28,7 +28,7 @@ function Search(props) {
       <Col xs={24} md={14} lg={10}>
         <span
           className="ant-input-group-wrapper ant-input-search ant-input-search-default ant-input-search-with-button"
-          style={{ margin: '4rem auto 2rem' }}
+          style={{ margin: '4rem auto 0' }}
         >
           <span className="ant-input-wrapper ant-input-group">
             <span className="ant-input-affix-wrapper">

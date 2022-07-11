@@ -1,10 +1,12 @@
+import Footer from './Footer';
 import Header from './Header';
 
 function Layout(props) {
   return (
     <>
-      <Header titulo="Título desde Layout" />
+      <Header />
       {props.children}
+      <Footer />
     </>
   );
 }

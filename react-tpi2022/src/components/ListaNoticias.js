@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Row, Col, Spin, Typography } from 'antd';
+import { Card, Row, Col, Spin, Typography, Pagination } from 'antd';
 import Swal from 'sweetalert2';
 
 import axios from 'axios';
@@ -9,9 +9,15 @@ const { Text } = Typography;
 
 function ListaNoticias(props) {
   let query = props.valor,
-    page = 1,
-    items = 10,
     lang = 'es';
+
+  const [loading, setLoading] = useState(false),
+    [datos, setDatos] = useState(null),
+    [totalNoticas, setTotalNoticias] = useState(0),
+    [page, setPage] = useState(1),
+    [items, setItems] = useState(10),
+    [error, setError] = useState(null),
+    [message, showMessage] = useState(false);
 
   const url =
     'https://newsapi.org/v2/everything?q=' +
@@ -25,11 +31,6 @@ function ListaNoticias(props) {
     '&language=' +
     lang;
 
-  const [loading, setLoading] = useState(false),
-    [datos, setDatos] = useState(null),
-    [error, setError] = useState(null),
-    [message, showMessage] = useState(false);
-
   useEffect(() => {
     setLoading(true);
     // setDatos(null);
@@ -37,7 +38,8 @@ function ListaNoticias(props) {
       .get(url)
       .then((res) => {
         setDatos(res.data.articles);
-        console.log(res.data.articles);
+        setTotalNoticias(res.data.totalResults);
+        // console.log(res.data);
         showMessage(true);
       })
       .catch((error) => {
@@ -48,6 +50,12 @@ function ListaNoticias(props) {
   function mostrarContenido(e) {
     setTimeout(() => setLoading(false), 1000);
   }
+
+  const onChange = (pageNumber, pageSize) => {
+    console.log('Page: ', pageNumber, 'PageSize: ', pageSize);
+    setPage(pageNumber);
+    setItems(pageSize);
+  };
 
   function goToLink(url) {
     console.log(url);
@@ -78,6 +86,11 @@ function ListaNoticias(props) {
 
   return (
     <>
+      {datos && datos.length > 0 && (
+        <h4 style={{ margin: '1.5rem 0' }}>
+          Está viendo {items} noticias de {totalNoticas} resultados
+        </h4>
+      )}
       <Row gutter={16} justify="center">
         {datos && datos.length > 0
           ? datos.map((item, index) => {
@@ -129,6 +142,21 @@ function ListaNoticias(props) {
               </Col>
             )}
       </Row>
+      {datos && datos.length > 0 && (
+        <Row gutter={16} justify="center" style={{ marginTop: '1.5rem' }}>
+          <Pagination
+            current={page}
+            showQuickJumper
+            defaultPageSize={10}
+            defaultCurrent={1}
+            total={totalNoticas}
+            showTotal={(total, range) =>
+              `${range[0]}-${range[1]} de ${total} noticias`
+            }
+            onChange={onChange}
+          />
+        </Row>
+      )}
     </>
   );
 }

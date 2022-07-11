@@ -1,29 +1,7 @@
-import { Layout, Input, Divider } from 'antd';
-import { AudioOutlined } from '@ant-design/icons';
-import CreateForm from '../components/CreateForm';
-import CardComponent from '../components/CardComponent';
-import { useState } from 'react';
-const { Content, Footer } = Layout;
-const { Search } = Input;
+import { Layout } from 'antd';
+const { Content } = Layout;
 
 function About() {
-  const onSearch = (value) => console.log(value);
-
-  const handleChange = (e) => {
-    setForm({ titulo: e.target.value });
-  };
-
-  const [form, setForm] = useState({ titulo: 'Franco' });
-
-  const suffix = (
-    <AudioOutlined
-      style={{
-        fontSize: 16,
-        color: '#1890ff',
-      }}
-    />
-  );
-
   return (
     <Layout>
       <Content
@@ -33,30 +11,16 @@ function About() {
         }}
       >
         <div className="site-layout-content">
-          <Search
-            placeholder="input search text"
-            enterButton="Search"
-            size="default"
-            suffix={suffix}
-            onSearch={onSearch}
-            style={{
-              width: 304,
-              margin: '4rem auto 2rem',
-            }}
-          />
-          <CardComponent titulo={form.titulo} />
-          <Divider />
-          <CreateForm formValues={form} handleChange={handleChange} />
+          <h2 style={{ marginTop: '3rem' }}>Curso de FrontEnd ReactJs 2022</h2>
+          <a
+            href="https://capacitaciones.chaco.gob.ar/course/view.php?id=147"
+            target="_blank"
+            rel="noreferrer"
+          >
+            ReactJs - Chaco: Gobierno de Todos
+          </a>
         </div>
       </Content>
-      <Footer
-        style={{
-          textAlign: 'center',
-        }}
-      >
-        <a href="./"> Franco Barreto ©2022 </a>|<a href="./"> Privacy </a>|
-        <a href="./"> About </a> | <a href="./"> Disclaimer </a>
-      </Footer>
     </Layout>
   );
 }
