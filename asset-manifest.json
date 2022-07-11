@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ReactTPI2022/static/css/main.e8ca114c.css",
+    "main.js": "/ReactTPI2022/static/js/main.c93dd4e8.js",
+    "static/js/787.1fb398aa.chunk.js": "/ReactTPI2022/static/js/787.1fb398aa.chunk.js",
+    "index.html": "/ReactTPI2022/index.html",
+    "main.e8ca114c.css.map": "/ReactTPI2022/static/css/main.e8ca114c.css.map",
+    "main.c93dd4e8.js.map": "/ReactTPI2022/static/js/main.c93dd4e8.js.map",
+    "787.1fb398aa.chunk.js.map": "/ReactTPI2022/static/js/787.1fb398aa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8ca114c.css",
+    "static/js/main.c93dd4e8.js"
+  ]
+}
