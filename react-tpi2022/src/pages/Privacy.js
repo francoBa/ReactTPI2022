@@ -1,7 +1,7 @@
 function Privacy() {
   return (
     <div className="site-layout-content">
-      <h1>Política de Privacidad</h1>
+      <h1 style={{ marginTop: '3rem' }}>Política de Privacidad</h1>
       <h2>Aviso de privacidad</h2>
       <p>
         Este aviso de privacidad para Buscador React-Info2022 ("Compañía",

@@ -1,7 +1,7 @@
 function Disclaimer() {
   return (
     <div className="site-layout-content">
-      <h1>Descargo de Responsabilidad</h1>
+      <h1 style={{ marginTop: '3rem' }}>Descargo de Responsabilidad</h1>
       <h2>Aviso legal</h2>
       <p>
         La información proporcionada por Buscador React-Info2022 ("nosotros",
