@@ -11,12 +11,12 @@ function App() {
   return (
     <Layout>
       <Routes>
+        <Route index path="" exact element={<Home />} />
         <Route path="about" exact element={<About />} />
         <Route path="contacto" exact element={<Contacto />} />
         <Route path="disclaimer" exact element={<Disclaimer />} />
         <Route path="privacy" exact element={<Privacy />} />
         <Route path="buscador" exact element={<Home />} />
-        <Route index path="" exact element={<Home />} />
         <Route path="*" exact element={<Page404 />} />
       </Routes>
     </Layout>

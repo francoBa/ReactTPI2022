@@ -30,7 +30,8 @@ function NewForm() {
     // navigate('/');
     // setFormVisible('none');
     setTimeout(() => {
-      window.location.href = '/';
+      // window.location.href = window.location.origin + window.location.pathname;
+      window.location.href = window.location.origin;
     }, 1500);
   };
 

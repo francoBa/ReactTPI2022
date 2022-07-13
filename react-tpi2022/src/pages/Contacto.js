@@ -3,6 +3,7 @@ import { Layout } from 'antd';
 const { Content } = Layout;
 
 function Contacto() {
+  // console.log(window.location);
   return (
     <Layout>
       <Content
