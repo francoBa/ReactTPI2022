@@ -1,4 +1,4 @@
-import { Layout } from 'antd';
+import { Layout, Divider } from 'antd';
 const { Content } = Layout;
 
 function About() {
@@ -17,7 +17,16 @@ function About() {
             target="_blank"
             rel="noreferrer"
           >
-            ReactJs - Chaco: Gobierno de Todos
+            ReactJs - Informatorio
+          </a>
+          <Divider />
+          <p>Uso de News API como buscador de noticias</p>
+          <a
+            href="https://newsapi.org/docs/endpoints/everything"
+            target="_blank"
+            rel="noreferrer"
+          >
+            News API
           </a>
         </div>
       </Content>

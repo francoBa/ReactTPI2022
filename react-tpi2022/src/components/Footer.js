@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Layout } from 'antd';
+import { Layout, Divider } from 'antd';
 const { Footer: Foot } = Layout;
 
 function Footer() {
@@ -16,13 +16,14 @@ function Footer() {
         target="_blank"
         rel="noreferrer"
       >
-        Franco Barreto ©{year}{' '}
+        Franco Barreto ©{year}
       </a>
-      |{' '}
+      <Divider type="vertical" />
       <NavLink to={{ pathname: '/privacy', titulo: 'Privacy' }}>
         Privacy
-      </NavLink>{' '}
-      | <NavLink to="/disclaimer">Disclaimer</NavLink>
+      </NavLink>
+      <Divider type="vertical" />
+      <NavLink to="/disclaimer">Disclaimer</NavLink>
     </Foot>
   );
 }

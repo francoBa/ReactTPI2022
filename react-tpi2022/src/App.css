@@ -71,6 +71,10 @@
   margin-bottom: 1rem;
 }
 
+.ant-divider-vertical {
+  border-left-color: #aaa;
+}
+
 .logo {
   float: left;
   width: 50px;

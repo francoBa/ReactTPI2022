@@ -98,7 +98,6 @@ function ListaNoticias(props) {
                 <Col xs={24} md={12} lg={8} key={index}>
                   <Spin tip="Loading..." spinning={loading}>
                     <a onClick={() => goToLink(item.url)}>
-                      {/* <a onClick={goToLink} href={item.url} target="_blank" rel="noreferrer"> */}
                       <Card
                         cover={
                           <img
